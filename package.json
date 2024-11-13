@@ -1,14 +1,14 @@
-{
-    "name": "ecommerce-project",
+  {
+    "name": "ecommerce-mern-spa",
     "version": "1.0.0",
     "private": true,
     "scripts": {
       "install": "cd client && npm install && cd ../server && npm install",
       "client": "npm start --prefix client",
-      "server": "npm start --prefix server",
+      "server": "npm run dev --prefix server",
       "dev": "concurrently \"npm run client\" \"npm run server\"",
-      "build": "cd client && npm run build && cd ../server && npm run build",
-      "start": "npm run server"
+      "build": "cd client && npm run build",
+      "start": "node server/dist/server.js"
     },
     "dependencies": {
       "concurrently": "^8.0.1"
