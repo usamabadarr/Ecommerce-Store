@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import App from './App.jsx';
 import Home from './pages/Home.jsx';
-import Profile from './pages/Profile';
+import Profile from './pages/Profile.jsx';
 import Signup from './pages/Signup.jsx';
 import Login from './pages/Login.jsx';
 import Error from './pages/Error.jsx';
