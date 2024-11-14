@@ -1,17 +1,24 @@
-import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 
-const FeaturedItem = ({ item }) => {
+interface Item {
+    title: string;
+    description: string;
+    image: string;
+}
+
+const FeaturedItem = ({ item }: { item: Item }) => {
     const { title, description, image } = item;
 
     return (
         <Carousel.Item>
-            <Image src="" />
+            <Image src={image} />
             <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <h3>{title}</h3>
+                <p>{description}</p>
             </Carousel.Caption>
         </Carousel.Item>
     );
 }
+
+export default FeaturedItem;
