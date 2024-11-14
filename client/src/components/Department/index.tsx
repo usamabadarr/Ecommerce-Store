@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from 'react';
 
-import ProductCard from '../ProductCard.jsx'
+import ProductCard from '../ProductCard'
 
 const Department: React.FC = () => {
     const [product, setProduct] = useState([]);
