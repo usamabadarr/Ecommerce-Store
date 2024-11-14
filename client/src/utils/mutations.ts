@@ -1,26 +1,30 @@
 import { gql } from '@apollo/client';
 
-export const ADD_PROFILE = gql`
-  mutation addProfile($input: ProfileInput!) {
-    addProfile(input: $input) {
-      token
-      profile {
-        _id
-        name
-      }
+export const ADD_CARTITEM = gql`
+  mutation addCartItem($id: ID!, $img: String!, $quantity: 1, $price: Float!, $subtotal: Float!) {
+    addCartItem(id: $id) {
+      _id
+      img
+      quantity
+      price
+      subtotal
     }
   }
 `;
 
-export const ADD_SKILL = gql`
-  mutation addSkill($profileId: ID!, $skill: String!) {
-    addSkill(profileId: $profileId, skill: $skill) {
+
+export const UPDATE_CARTITEM = gql`
+  mutation updateCartItem($id: ID!, $quantity: Number!) {
+    updateCartItem(id: $id) {
       _id
-      name
-      skills
+      img
+      quantity
+      price
+      subtotal
     }
   }
 `;
+
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -30,16 +34,6 @@ export const LOGIN_USER = gql`
         _id
         name
       }
-    }
-  }
-`;
-
-export const REMOVE_SKILL = gql`
-  mutation removeSkill($skill: String!) {
-    removeSkill(skill: $skill) {
-      _id
-      name
-      skills
     }
   }
 `;
