@@ -12,7 +12,6 @@ export const ADD_CARTITEM = gql`
   }
 `;
 
-
 export const UPDATE_CARTITEM = gql`
   mutation updateCartItem($id: ID!, $quantity: Number!) {
     updateCartItem(id: $id) {
@@ -32,7 +31,27 @@ export const LOGIN_USER = gql`
       token
       profile {
         _id
-        name
+        profileImg
+        username
+        email
+        password
+        cartID
+      }
+    }
+  }
+`;
+
+export const ADD_USER = gql`
+  mutation addUser($email: String!, $password: String!) {
+    addUser(email: $email, password: $password) {
+      token
+      profile {
+        _id
+        profileImg
+        username
+        email
+        password
+        cartID
       }
     }
   }
