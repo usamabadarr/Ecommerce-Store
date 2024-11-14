@@ -1,9 +1,9 @@
 interface CartItem {
     id: string;
+    itemName: string;
     img: string;
     quantity: number;
     price: number;
-    subtotal: number;
 }
 
 export default CartItem;

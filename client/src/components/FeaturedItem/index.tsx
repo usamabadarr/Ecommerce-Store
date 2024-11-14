@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
-import  Item  from '../../interfaces/Item';
+import Item from '../../interfaces/Item';
 
 const FeaturedItem = ({ item }: { item: Item }) => {
     const { itemImg ,itemName, description,  } = item;
