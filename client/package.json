@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "vite",
+    "dev": "vite --port 3000",
+    "build": "tsc && vite build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint src --ext js,tsx --report-unused-disable-directives --max-warnings 0",
