@@ -5,9 +5,13 @@ import { QUERY_SINGLE_CART } from '../../utils/queries';
 import ShoppingCartItem from './ShoppingCartItem'
 import CartItem from '../../interfaces/CartItem';
 
-function ShoppingCart(cartID: string) {
+import Auth from '../../utils/auth';
+
+function ShoppingCart() {
+    const userID = Auth.getProfile().data._id;
+
     const { loading, data } = useQuery(QUERY_SINGLE_CART, {
-        variables: { cartID: cartID },
+        variables: { cartID: userID },
     });
 
     if (loading) {

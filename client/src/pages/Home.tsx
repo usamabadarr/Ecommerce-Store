@@ -55,7 +55,7 @@ const Home = () => {
                     <Offcanvas.Title>ShoppingCart</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    <ShoppingCart cartID="someValue" />
+                    <ShoppingCart />
                 </Offcanvas.Body>
             </Offcanvas>
         </>
