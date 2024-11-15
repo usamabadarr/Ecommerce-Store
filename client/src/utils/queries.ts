@@ -29,7 +29,6 @@ export const QUERY_SINGLE_CART = gql`
     }
   }
 `;
-
 export const QUERY_FEATURED_ITEMS = gql`
   query featuredItems {
     featuredItems {
@@ -39,6 +38,32 @@ export const QUERY_FEATURED_ITEMS = gql`
       price
       quantity
       department
+    }
+  }
+`;
+
+export const QUERY_DEPARTMENT_NAME = gql`
+  query departments {
+    departments {
+      _id
+      name
+    }
+  }
+`;
+
+export const QUERY_DEPARTMENT = gql`
+  query department($departmentId: ID!) {
+    department(departmentId: $departmentId) {
+      _id
+      name
+      items {
+        _id
+        name
+        description
+        price
+        quantity
+        department
+      }
     }
   }
 `;

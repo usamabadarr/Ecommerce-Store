@@ -1,5 +1,5 @@
 interface Item {
-    id: number;
+    id: string;
     itemName: string;
     itemImg: string;
     department_id: number;

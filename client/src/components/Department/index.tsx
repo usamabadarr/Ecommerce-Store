@@ -1,31 +1,27 @@
-// import { Link } from 'react-router-dom';
-// import { type MouseEvent} from 'react';
-// import Auth from '../../utils/auth';
 
-import { useEffect, useState } from 'react';
+import { useQuery } from '@apollo/client';
 
-import ProductCard from '../ProductCard'
+import ProductList from './DepartmentSection/ProductList';
+import IDepartment from '../../interfaces/Department';
 
-const Department: React.FC = () => {
-    const [product, setProduct] = useState([]);
+import { QUERY_DEPARTMENT_NAME } from '../../utils/queries';
 
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=5')
-            .then(res => res.json())
-            .then(json => {
-                setProduct(json)
-            })
-    }, []);
+const Department = () => {
+    const { loading, data } = useQuery(QUERY_DEPARTMENT_NAME);
+    const departmentData = data?.departmentData || [];
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <section className="w-100 mt-auto text-dark p-4">
             <div className="container text-center mb-5">
-                <h2>Department</h2>
-                <div className="row">
-                    {product.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                    ))}
-                </div>
+                {departmentData.map((department: IDepartment) => (
+                    <>
+                        <h2>{department.name}</h2>
+                        <ProductList key={department.id} DepartmentID={department.id} />
+                    </>
+                ))}
             </div>
         </section>
     );
