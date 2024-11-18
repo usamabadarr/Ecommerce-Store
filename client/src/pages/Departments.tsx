@@ -1,15 +1,23 @@
-import depts from 'departments.db'
+import departments from 'departments.db'
 import Department from '../interfaces/Department'
 
-export default function departmentList({ depts }) {
+const depts: Department[] = departments;
+
+export default function departmentList() {
+    
+    
+    
+    
+    
+    
     return (
-        <div className="container">
+        <div>
             <h1>Departments:</h1>
-            <section className="card-deck">
+            <section>
                 {depts.map((department: Department) => (
                     <div key={department.id} className='card'>
-                        <h2> {department.title} </h2>
-                        <img className='' src={department.image} alt="Department Image" />                        
+                        <h2> {department.name} </h2>
+                        <img src={department.image} alt="Department Image" />                        
                         <div> ${department.featured} </div>
                     </div>)
                     )
