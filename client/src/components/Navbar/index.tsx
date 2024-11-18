@@ -21,10 +21,10 @@ const Navbar: React.FC = () => {
         <div className="navbar-category">
           <select>
             <option value="">Departments</option>
-            <option value="sales">Sales</option>
-            <option value="marketing">Marketing</option>
-            <option value="hr">HR</option>
-            <option value="it">IT</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="lighting">Lighting</option>
+            <option value="clothing">Clothing</option>
           </select>
         </div>
 
