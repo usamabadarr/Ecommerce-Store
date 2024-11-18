@@ -1,17 +1,18 @@
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import morgan from 'morgan';
-import authRoutes from './routes/authRoutes';
+import express from "express";
+import { ApolloServer } from "apollo-server-express";
+import connectDB from "./config/db";
+import typeDefs from "./graphql/schema";
+import resolvers from "./graphql/resolvers";
 
 const app = express();
 
-// Middleware
-app.use(cors());
-app.use(bodyParser.json());
-app.use(morgan('dev'));
+// Connect Database
+connectDB();
 
-// Routes
-app.use('/api/auth', authRoutes);
+// GraphQL Server
+const server = new ApolloServer({ typeDefs, resolvers });
+await server.start();
+server.applyMiddleware({ app });
 
 export default app;
+
