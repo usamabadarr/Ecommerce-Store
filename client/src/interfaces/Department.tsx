@@ -1,6 +1,6 @@
-interface Department {
+interface IDepartment {
     id: string;
     name: string;
 }
 
-export default Department;
+export default IDepartment;
