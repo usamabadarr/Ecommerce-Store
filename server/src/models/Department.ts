@@ -32,16 +32,3 @@ const Department = model('Department', departmentSchema);
 
 
 export default Department
-
-// Department
-//     .create({
-//         name: 'Electronics',
-//         image: '',
-//         totalStock: 0,
-//         featured: '',
-//         lastAccessed:
-//     })
-//     .then(result => console.log('Created new department', result))
-//     .catch(err => console.log(err))
-
-
