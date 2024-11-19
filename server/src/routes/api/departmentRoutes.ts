@@ -4,6 +4,6 @@ import { getDepartments, getSingleDepartment, addDepartment } from '../../contro
 
 router.route('/').get(getDepartments).post(addDepartment);
 
-router.route('/:departmentID').get(getSingleDepartment);
+router.route('/:departmentId').get(getSingleDepartment);
 
 export default router
