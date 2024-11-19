@@ -1,17 +1,17 @@
-  {
+{
     "name": "ecommerce-store",
     "version": "1.0.0",
     "private": true,
     "scripts": {
-      "install": "cd client && npm install && cd ../server && npm install",
-      "client": "npm start --prefix client",
-      "server": "npm run dev --prefix server",
-      "dev": "concurrently \"npm run client\" \"npm run server\"",
-      "build": "cd client && npm run build",
-      "start": "node server/dist/server.js"
+        "install": "cd client && npm install && cd ../server && npm install",
+        "client": "npm start --prefix client",
+        "server": "npm run dev --prefix server",
+        "dev": "concurrently \"npm run client\" \"npm run server\"",
+        "build": "cd client && npm run build",
+        "start": "node server/dist/server.js"
     },
     "dependencies": {
-      "concurrently": "^8.0.1"
+        "concurrently": "^8.0.1",
+        "mongoose": "^8.8.1"
     }
-  }
-  
+}

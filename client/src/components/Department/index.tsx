@@ -5,6 +5,8 @@
 import { useEffect, useState } from 'react';
 
 import ProductCard from '../ProductCard'
+import FeaturedItem from '../FeaturedItem';
+
 
 const Department: React.FC = () => {
     const [product, setProduct] = useState([]);
@@ -30,5 +32,3 @@ const Department: React.FC = () => {
         </section>
     );
 };
-
-export default Department;
