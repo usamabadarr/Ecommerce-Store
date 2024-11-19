@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./Navbar.css";
+import "./styles.css";
 
 const Navbar: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
+    
     <nav className="navbar">
       <div className="navbar-container">
         {/* Logo Section */}
