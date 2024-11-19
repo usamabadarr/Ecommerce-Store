@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 
-interface Department {
+interface IDepartment {
     id: string;
     name: string;
     image: string;
     featured: ReactNode;
 }
 
-export default Department;
+export default IDepartment;
