@@ -29,9 +29,9 @@ console.log(data)
             <option value="furniture">Furniture</option>
             <option value="lighting">Lighting</option>
             <option value="clothing">Clothing</option>
-            {data.map((department)=>(
+            {/* {data.map((department)=>(
                 <option>{department.name}</option>
-            ))}
+            ))} */}
           </select>
         </div>
 
