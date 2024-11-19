@@ -1,8 +1,8 @@
-import { Schema, model, Document, ObjectId, } from 'mongoose';
+import { Schema, model, Document } from 'mongoose';
 
 interface ICart extends Document {
-    user: ObjectId;
-    addedItems: ObjectId[];
+    user: Schema.Types.ObjectId;
+    addedItems: Schema.Types.ObjectId[];
     total: number;
 };
 
