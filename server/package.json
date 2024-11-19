@@ -1,19 +1,18 @@
 {
-    "name": "ecommerce-store",
-    "version": "1.0.0",
-    "private": true,
-    "type": "module",
-    "main": "dist/server.js",
-    "scripts": {
-    "build": "tsc",
+  "name": "ecommerce-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
     "start": "node dist/server.js",
+    "dev": "npx tsc && node dist/server.js",
     "seed": "node dist/seeds/seed.js",
     "watch": "nodemon dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "lint": "eslint src --ext .ts --report-unused-disable-directives --max-warnings 0",
+    "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.10.4",
     "bcrypt": "^5.0.0",
