@@ -1,4 +1,4 @@
-import { Schema, model, Document, ObjectId, } from 'mongoose';
+import { Schema, model, Document } from 'mongoose';
 
 interface IItem extends Document {
     name: string;
@@ -7,7 +7,7 @@ interface IItem extends Document {
     price: number;
     inStock: Boolean;
     stockCount?: Number;
-    department: ObjectId;
+    department: Schema.Types.ObjectId;
     featured: boolean;
 };
 
