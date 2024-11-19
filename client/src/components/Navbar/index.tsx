@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./styles.css";
+import { useQuery } from "@apollo/client";
+import {QUERY_DEPARTMENT_NAME} from "../../utils/queries"
 
 const Navbar: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+const {data} = useQuery(QUERY_DEPARTMENT_NAME)
+console.log(data)
   return (
     
     <nav className="navbar">
@@ -26,6 +29,9 @@ const Navbar: React.FC = () => {
             <option value="furniture">Furniture</option>
             <option value="lighting">Lighting</option>
             <option value="clothing">Clothing</option>
+            {data.map((department)=>(
+                <option>{department.name}</option>
+            ))}
           </select>
         </div>
 
