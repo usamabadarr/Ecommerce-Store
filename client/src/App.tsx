@@ -7,7 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
-
+import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -39,6 +39,7 @@ function App() {
     <ApolloProvider client={client}>
       <div className="flex-column justify-flex-start min-100-vh">
         <Header />
+        <Navbar></Navbar>
         <div className="container">
           <Outlet />
         </div>

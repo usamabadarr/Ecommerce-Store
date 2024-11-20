@@ -1,17 +1,31 @@
 {
-    "name": "ecommerce-store",
+    "name": "main",
     "version": "1.0.0",
-    "private": true,
+    "description": "",
+    "main": "index.js",
     "scripts": {
-        "install": "cd client && npm install && cd ../server && npm install",
-        "client": "npm start --prefix client",
-        "server": "npm run dev --prefix server",
-        "dev": "concurrently \"npm run client\" \"npm run server\"",
-        "build": "cd client && npm run build",
-        "start": "node server/dist/server.js"
+        "start": "node server/server.js",
+        "start:dev": "concurrently \"cd server && npm run watch\" \"wait-on tcp:3001 && cd client && npm run dev\"",
+        "server": "cd server && npm start",
+        "server:dev": "cd server && npm run dev",
+        "install": "cd server && npm i && cd ../client && npm i",
+        "client:build": "cd client && npm run build",
+        "client:dev": "cd client && npm run dev",
+        "seed": "cd server && npm run seed",
+        "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
+        "render-build": "npm install && npm run build",
+        "set-up": "npm install && npm run build && npm run seed && npm run start:dev"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^8.2.2",
+        "wait-on": "^7.2.0"
     },
     "dependencies": {
-        "concurrently": "^8.0.1",
-        "mongoose": "^8.8.1"
+        "@cypress/react": "^8.0.2",
+        "@cypress/vite-dev-server": "^5.2.1",
+        "cypress": "^13.16.0"
     }
 }
