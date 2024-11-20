@@ -19,3 +19,5 @@ router.route('/:featuredItems').get(getAllFeaturedItems)
 router.route('/:featuredItemsByDept').get(getFeaturedItemsByDept)
 
 router.route('/:itemId').get(getSingleItem).delete(deleteItem);
+
+export { router as itemRouter };
