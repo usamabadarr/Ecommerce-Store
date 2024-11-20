@@ -10,7 +10,7 @@ import FeaturedItem from '../components/FeaturedItem';
 import Department from '../components/Department';
 import ShoppingCart from '../components/ShoppingCart';
 
-import Item from '../interfaces/Item';
+import Item from '../interfaces/IItem';
 
 const Home = () => {
     const [show, setShow] = useState(false);
