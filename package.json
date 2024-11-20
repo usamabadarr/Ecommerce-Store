@@ -22,5 +22,10 @@
     "devDependencies": {
         "concurrently": "^8.2.2",
         "wait-on": "^7.2.0"
+    },
+    "dependencies": {
+        "@cypress/react": "^8.0.2",
+        "@cypress/vite-dev-server": "^5.2.1",
+        "cypress": "^13.16.0"
     }
 }
