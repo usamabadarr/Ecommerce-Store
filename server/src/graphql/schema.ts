@@ -16,14 +16,27 @@ const typeDefs = gql`
     stock: Int!
   }
 
+  type Thought {
+    id: ID!
+    content: String!
+    createdBy: User!
+  }
+
+  input ThoughtInput {
+    content: String!
+  }
+
   type Query {
     getProducts: [Product]
+    getThoughts: [Thought]
   }
 
   type Mutation {
     register(username: String!, email: String!, password: String!): User
     login(email: String!, password: String!): User
+    addThought(input: ThoughtInput!): Thought
   }
 `;
 
 export default typeDefs;
+
