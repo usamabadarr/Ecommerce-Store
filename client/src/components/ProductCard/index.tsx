@@ -1,4 +1,4 @@
-import Item from '../../interfaces/IItem';
+import Item from '../../interfaces/Item';
 import { SyntheticEvent } from 'react';
 import { ADD_CARTITEM } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';

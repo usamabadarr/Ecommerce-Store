@@ -1,5 +1,5 @@
 import departments from 'departments.db'
-import Department from '../interfaces/IDepartment'
+import Department from '../interfaces/Department'
 
 const depts: Department[] = departments;
 

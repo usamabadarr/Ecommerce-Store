@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_CART } from '../../utils/queries';
 
 import ShoppingCartItem from './ShoppingCartItem'
-import CartItem from '../../interfaces/ICartItem';
+import CartItem from '../../interfaces/CartItem';
 
 import Auth from '../../utils/auth';
 
