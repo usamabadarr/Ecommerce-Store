@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import ProductCard from '../../ProductCard';
-import Item from '../../../interfaces/IItem';
+import Item from '../../../interfaces/Item';
 
 import { QUERY_DEPARTMENT } from '../../../utils/queries';
 

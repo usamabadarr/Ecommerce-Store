@@ -1,13 +1,16 @@
 {
-  "name": "client",
+  "name": "ecommerce-store",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
+    "dev": "vite --port 3000",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "lint": "eslint src --ext js,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "eslint": "eslint src",
+    "test": "vitest"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",

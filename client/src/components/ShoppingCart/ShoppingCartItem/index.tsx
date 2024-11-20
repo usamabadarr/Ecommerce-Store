@@ -1,4 +1,4 @@
-import CartItem from "../../../interfaces/ICartItem"
+import CartItem from "../../../interfaces/CartItem"
 
 
 const ShoppingCartItem = ({ item }: { item: CartItem }) => {
