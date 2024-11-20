@@ -1,7 +1,7 @@
 
 import { useQuery } from '@apollo/client';
 
-import ProductList from './DepartmentSection/ProductList';
+import ProductList from './DepartmentCard';
 import IDepartment from '../../interfaces/Department';
 
 import { QUERY_DEPARTMENT_NAME } from '../../utils/queries';

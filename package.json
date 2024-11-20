@@ -22,5 +22,9 @@
     "devDependencies": {
         "concurrently": "^8.2.2",
         "wait-on": "^7.2.0"
+    },
+    "dependencies": {
+        "@types/styled-components": "^5.1.34",
+        "styled-components": "^6.1.13"
     }
 }

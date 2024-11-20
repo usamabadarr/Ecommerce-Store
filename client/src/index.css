@@ -11,3 +11,81 @@
     --tertiary: #BDFA31;
     --error-background-color: rgba(209, 71, 59, 0.875);
   }
+
+
+/* Center the grid container */
+.product-grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add some spacing around the grid */
+  background-color: #f8f9fa; /* Optional: Light background for contrast */
+}
+
+/* Grid Styling */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px; /* Add consistent gaps between the cards */
+  max-width: 1200px; /* Optional: Limit the grid width */
+  width: 100%;
+  justify-content: center;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  width: 400px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-body input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-body .btn {
+  width: 100%;
+}
+
+
+/* Optional: Adjust gaps for smaller screens */
+@media (max-width: 768px) {
+  .product-grid {
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
