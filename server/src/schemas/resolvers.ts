@@ -1,3 +1,4 @@
+
 // import { addDepartment } from '../controllers/departmentController.js';
 import { Department, Item, CartItem } from '../models/index.js';
 // import { signToken, AuthenticationError } from '../utils/auth.js';
@@ -19,9 +20,6 @@ interface DepartmentArgs {
 interface ItemArgs {
     name: string
 }
-
-
-
 
 // interface addItemArgs {
 //     input: {
