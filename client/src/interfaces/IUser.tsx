@@ -1,4 +1,4 @@
-interface User {
+interface IUser {
     id: string;
     profileImg: string;
     username: string;
@@ -7,4 +7,4 @@ interface User {
     cartID: string[];
 }
 
-export default User;
+export default IUser;

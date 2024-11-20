@@ -1,7 +1,7 @@
-interface Cart {
+interface ICart {
     id: string;
     total: number;
     addedItems: object[];
 }
 
-export default Cart;
+export default ICart;

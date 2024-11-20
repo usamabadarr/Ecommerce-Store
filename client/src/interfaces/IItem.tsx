@@ -1,4 +1,4 @@
-interface Item {
+interface IItem {
     id: string;
     itemName: string;
     itemImg: string;
@@ -7,4 +7,4 @@ interface Item {
     description: string;
 }
 
-export default Item;
+export default IItem;

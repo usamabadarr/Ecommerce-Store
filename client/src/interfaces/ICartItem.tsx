@@ -1,4 +1,4 @@
-interface CartItem {
+interface ICartItem {
     id: string;
     itemName: string;
     img: string;
@@ -6,4 +6,4 @@ interface CartItem {
     price: number;
 }
 
-export default CartItem;
+export default ICartItem;
