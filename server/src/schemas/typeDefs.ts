@@ -13,28 +13,33 @@ const typeDefs = gql`
         _id: ID
         user: [User]
         addedItems: [CartItem]
-        total: Number
+        total: Int
     }
 
     type CartItem {
         _id: ID
-        itemName: String
-        img: String
-        quantity: Number
-        price: Number
+        name: String
+        image: String
+        description: String
+        price: Int
+        quantity: Int
     }
 
     type Item {
         name: String
         image: String
         description: String
-        price: Number
-        quantity: Number
+        price: Int
+        inStock: Boolean
+        stockCount: Int
+        department: [Department]
+        featured: Boolean
     }
 
     type Department {
         name: String
         items: [Item]
+        lastAccessed: String
     }
 
     input UserInput {
@@ -50,9 +55,9 @@ const typeDefs = gql`
     }
 
     type Query {
-    users: [User]
-    user(username: String!): User
-    me: User
+        users: [User]
+        user(username: String!): User
+        me: User
     }
     
     type Mutation {
