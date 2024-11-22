@@ -1,6 +1,5 @@
 import mongoose, { Schema, Document } from "mongoose";
 import bcrypt from "bcrypt";
-
 export interface IUser extends Document {
   profilePic: string;
   username: string;

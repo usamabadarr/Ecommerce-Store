@@ -1,7 +1,5 @@
 import { Schema, model, Document } from 'mongoose';
 
-
-
 interface IDepartment extends Document {
     name: string;
     items: Schema.Types.ObjectId[];
