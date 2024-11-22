@@ -1,57 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
+import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import Auth from "../../utils/auth";
+import { QUERY_DEPARTMENT_NAME } from "../../utils/queries";
 import "./styles.css";
 
-const Navbar: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+const HeaderNavbar: React.FC = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(Auth.loggedIn());
+  const { data } = useQuery(QUERY_DEPARTMENT_NAME);
+
+  const logout = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    Auth.logout();
+    setIsLoggedIn(false);
+  };
 
   return (
-    
-    <nav className="navbar">
-      <div className="navbar-container">
-        {/* Logo Section */}
-        <div className="navbar-logo">
-          <h1>MyApp</h1>
-        </div>
+    <header className="header">
+      <div className="header-container">
+        <Link to="/" className="header-logo">Ecommerce-Store</Link>
 
-        {/* Search Bar */}
-        <div className="navbar-search">
-          <input type="text" placeholder="Search..." />
-        </div>
+        
 
-        {/* Category Dropdown */}
-        <div className="navbar-category">
-          <select>
+        <div className="header-auth">
+          {isLoggedIn ? (
+            <>
+          <input className="navbar-search" type="text" placeholder="Search products..." />
+          <select className="navbar-category">
             <option value="">Departments</option>
-            <option value="electronics">Electronics</option>
-            <option value="furniture">Furniture</option>
-            <option value="lighting">Lighting</option>
-            <option value="clothing">Clothing</option>
+            {data?.departments?.map(({ id, name }: { id: string; name: string }) => (
+              <option key={id} value={name}>{name}</option>
+            ))}
           </select>
-        </div>
-
-        {/* Login/Profile Section */}
-        <div className="navbar-login">
-          {!isLoggedIn ? (
-            <button className="login-btn" onClick={() => setIsLoggedIn(true)}>
-              Login / Sign Up
-            </button>
+              <Link className="btn-primary" to="/me">My Profile</Link>
+              <button className="btn-secondary" onClick={logout}>Logout</button>
+              <Link to="/cart" className="navbar-cart">
+            🛒 <span className="cart-count">0</span>
+          </Link>
+            </>
           ) : (
-            <div className="navbar-profile">
-              <img
-                src="https://via.placeholder.com/40"
-                alt="Profile"
-                className="profile-img"
-              />
-              <span className="username">Username</span>
-              <button className="logout-btn" onClick={() => setIsLoggedIn(false)}>
-                Logout
-              </button>
-            </div>
+            <>
+              <Link className="btn-primary" to="/login">Login</Link>
+              <Link className="btn-secondary" to="/signup">Signup</Link>
+            </>
           )}
+          
         </div>
       </div>
-    </nav>
+     
+    </header>
   );
 };
 
-export default Navbar;
+export default HeaderNavbar;
