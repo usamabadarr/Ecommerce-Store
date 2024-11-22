@@ -42,6 +42,28 @@ const typeDefs = gql`
         lastAccessed: String
     }
 
+    input DepartmentInput {
+        name: String!
+        lastAccessed: String
+    }
+
+    input CartItemInput {
+        name: String
+        image: String
+        price: Int
+        quantity: Int
+    }
+
+    input ItemInput {
+        name: String!
+        image: String!
+        description: String!
+        price: Int!
+        inStock: Boolean!
+        stockCount: Int
+        featured: Boolean!
+    }
+
     input UserInput {
         username: String!
         profilePic: String
@@ -55,14 +77,23 @@ const typeDefs = gql`
     }
 
     type Query {
-        users: [User]
         user(username: String!): User
         me: User
+        cart: Cart
+        cartItem(name: String!): CartItem
+        cartItems: [CartItem]
+        items: [Item]
+        item(name: String!): Item
+        departments: [Department]
+        department(name: String!): Department
     }
     
     type Mutation {
         addUser(input: UserInput!): Auth
         login(email: String!, password: String!): Auth
+        addCartItem(input: CartItemInput!): Cart
+        addItem(input: ItemInput!): Item
+        addDepartment(input: DepartmentInput!): Department
 }
 `;
 
