@@ -1,6 +1,10 @@
 import { User, Department, Item, CartItem, Cart } from '../models/index.js';
 import { signToken } from '../utils/auth.js';
 
+interface UserContext {
+    user: { username: string, email: string, _id: string}
+}
+
 interface AddUserArgs {
     input: {
         username: string;
@@ -54,6 +58,8 @@ interface addItemArgs {
 interface cartItemArgs {
     name: string;
     image: string;
+    price: number;
+    quantity: number;
 }
 
 interface addCartItemArgs {
@@ -78,13 +84,13 @@ const resolvers = {
             return Department.findOne({ name }).populate('items');
         },
         items: async () => {
-            return Item.find().populate('department')
+            return Item.find();
         },
         item: async (_parent: any, { name }: ItemArgs) => {
             return Item.findOne({ name })
         },
-        cart: async () => {
-            return Cart.findOne().populate('user').populate('addedItems')
+        cart: async (_parent: any, context: UserContext) => {
+            return await Cart.findOne({ user: context.user._id}).populate('addedItems');
         },
         cartItems: async () => {
             return CartItem.find()
@@ -124,9 +130,11 @@ const resolvers = {
             const token = signToken(user.username, user.email, user._id);
             return { token, user };
         },
-        addCartItem: async (_parent: any, { input }: addCartItemArgs) => {
+        addCartItem: async (_parent: any, { input }: addCartItemArgs, context: UserContext) => {
             const cartItem = await CartItem.create({ ...input })
 
+            await Cart.findOneAndUpdate({ user: context.user._id}, { $push: { addedItems: cartItem._id } }, { new: true })
+            
             return cartItem
         }
 
