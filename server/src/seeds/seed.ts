@@ -15,8 +15,17 @@ const seedDatabase = async (): Promise<void> => {
 
     await Department.insertMany(departmentSeeds);
     console.log('Departments seeded successfully!');
-    await Item.insertMany(itemSeeds);
-    console.log('Items seeded successfully!');
+    // departmentSeeds.forEach(async (department) => {
+    //   await Department.findOneAndUpdate(
+    //     { name: department.name },
+    //     { items: {items: itemSeeds} }
+    //   );
+    // }, departmentSeeds);
+    await Department.findOneAndUpdate(
+      { name: 'Electronics' },
+      { items: itemSeeds }
+    );
+    console.log('Electrionics Items seeded successfully!');
     await User.insertMany(userSeeds);
     console.log('Users seeded successfully!');
     await Cart.insertMany(cartSeeds);
