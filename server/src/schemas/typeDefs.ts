@@ -13,7 +13,7 @@ const typeDefs = gql`
         _id: ID
         user: [User]
         addedItems: [CartItem]
-        total: Int
+        total: Float
     }
 
     type CartItem {
@@ -21,17 +21,17 @@ const typeDefs = gql`
         name: String
         image: String
         description: String
-        price: Int
-        quantity: Int
+        price: Float
+        quantity: Float
     }
 
     type Item {
         name: String
         image: String
         description: String
-        price: Int
+        price: Float
         inStock: Boolean
-        stockCount: Int
+        stockCount: Float
         department: [Department]
         featured: Boolean
     }
@@ -50,17 +50,17 @@ const typeDefs = gql`
     input CartItemInput {
         name: String
         image: String
-        price: Int
-        quantity: Int
+        price: Float
+        quantity: Float
     }
 
     input ItemInput {
         name: String!
         image: String!
         description: String!
-        price: Int!
+        price: Float!
         inStock: Boolean!
-        stockCount: Int
+        stockCount: Float
         featured: Boolean!
     }
 
@@ -87,11 +87,11 @@ const typeDefs = gql`
         departments: [Department]
         department(name: String!): Department
     }
-    
+
     type Mutation {
         addUser(input: UserInput!): Auth
         login(email: String!, password: String!): Auth
-        addCartItem(input: CartItemInput!): Cart
+        addCartItem(input: CartItemInput!): CartItem
         addItem(input: ItemInput!): Item
         addDepartment(input: DepartmentInput!): Department
 }
