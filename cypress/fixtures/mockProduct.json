@@ -1,0 +1,21 @@
+{
+  "_id": "60d5f2d8bc2d7e2b1c2b6c5a",
+  "name": "Wireless Headphones",
+  "category": "Electronics",
+  "price": 199.99,
+  "description": "High-quality wireless headphones with noise cancellation and up to 20 hours of battery life.",
+  "stock": 25,
+  // "images": [
+  //   "https://example.com/images/headphones-front.jpg",
+  //   "https://example.com/images/headphones-side.jpg"
+  // ],
+  "features": [
+    "Bluetooth 5.0",
+    "Active Noise Cancellation",
+    "20-hour battery life"
+  ],
+  "ratings": {
+    "average": 4.5,
+    "reviews": 120
+  }
+}
