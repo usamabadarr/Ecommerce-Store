@@ -3,12 +3,16 @@ import { QUERY_DEPARTMENT } from '../../../utils/queries';
 import Item from '../../../interfaces/Item'
 import { useMutation } from '@apollo/client';
 import { ADD_CARTITEM } from '../../../utils/mutations';
-import { SyntheticEvent } from "react";
+import { useState, SyntheticEvent } from "react";
 import "./ProductCard.css";
 import auth from '../../../utils/auth';
 
 const ProductList = (DepartmentID: string) => {
     const userID = auth.getProfile().data._id;
+    const [itemId, setItemId] = useState<string>("");
+    const [cartId, setCartId] = useState<string>("");
+
+    setCartId(userID);
 
     const { loading, data } = useQuery(QUERY_DEPARTMENT, {
         variables: { DepartmentID: DepartmentID },
@@ -19,17 +23,17 @@ const ProductList = (DepartmentID: string) => {
         return <div>Loading...</div>;
     }
 
-    const [addItem] = useMutation(ADD_CARTITEM, {
-        variables: {
-            // cartID: userID, 
-            // itemID: itemsData.items[0]._id
-        },
-    });
+    const [addItem, { error }] = useMutation(ADD_CARTITEM);
 
     const handleAddToCart = async (event: SyntheticEvent) => {
         event.preventDefault();
         try {
-            await addItem({ variables: {  } });
+            setItemId(event.currentTarget.id);
+            await addItem({
+                variables: {
+                    cartId, itemId
+                }
+            });
             alert("Item added to cart!");
         } catch (e) {
             console.error(e);
@@ -52,7 +56,6 @@ const ProductList = (DepartmentID: string) => {
                     </div>
                 </div>
             ))}
-
         </>
     );
 };
