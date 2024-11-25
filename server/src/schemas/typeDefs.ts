@@ -32,7 +32,6 @@ const typeDefs = gql`
         price: Float
         inStock: Boolean
         stockCount: Float
-        department: [Department]
         featured: Boolean
     }
 
