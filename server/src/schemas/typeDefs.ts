@@ -26,6 +26,7 @@ const typeDefs = gql`
     }
 
     type Item {
+        _id: ID
         name: String
         image: String
         description: String
@@ -36,6 +37,7 @@ const typeDefs = gql`
     }
 
     type Department {
+        _id: ID
         name: String
         items: [Item]
         lastAccessed: String

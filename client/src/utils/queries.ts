@@ -30,8 +30,8 @@ export const QUERY_SINGLE_CART = gql`
   }
 `;
 export const QUERY_FEATURED_ITEMS = gql`
-  query featuredItems {
-    items(filter: { featured: true }) {
+  query featuredItem {
+    items {
       _id
       name
       image
@@ -44,7 +44,6 @@ export const QUERY_FEATURED_ITEMS = gql`
 export const QUERY_DEPARTMENT_NAME = gql`
   query departments {
     departments {
-      _id
       name
     }
   }
