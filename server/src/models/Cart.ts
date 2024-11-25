@@ -20,6 +20,6 @@ const CartSchema = new Schema<ICart>(
     }
 );
 
-const CartItem = model('Item', CartSchema);
+const Cart = model('Cart', CartSchema);
 
-export default CartItem
+export default Cart

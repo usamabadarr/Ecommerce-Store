@@ -13,28 +13,55 @@ const typeDefs = gql`
         _id: ID
         user: [User]
         addedItems: [CartItem]
-        total: Number
+        total: Float
     }
 
     type CartItem {
         _id: ID
-        itemName: String
-        img: String
-        quantity: Number
-        price: Number
+        name: String
+        image: String
+        description: String
+        price: Float
+        quantity: Float
     }
 
     type Item {
         name: String
         image: String
         description: String
-        price: Number
-        quantity: Number
+        price: Float
+        inStock: Boolean
+        stockCount: Float
+        department: [Department]
+        featured: Boolean
     }
 
     type Department {
         name: String
         items: [Item]
+        lastAccessed: String
+    }
+
+    input DepartmentInput {
+        name: String!
+        lastAccessed: String
+    }
+
+    input CartItemInput {
+        name: String
+        image: String
+        price: Float
+        quantity: Float
+    }
+
+    input ItemInput {
+        name: String!
+        image: String!
+        description: String!
+        price: Float!
+        inStock: Boolean!
+        stockCount: Float
+        featured: Boolean!
     }
 
     input UserInput {
@@ -50,21 +77,24 @@ const typeDefs = gql`
     }
 
     type Query {
-        users: [User]
         user(username: String!): User
-        thoughts: [Thought]!
-        thought(thoughtId: ID!): Thought
         me: User
+        cart: Cart
+        cartItem(name: String!): CartItem
+        cartItems: [CartItem]
+        items: [Item]
+        item(name: String!): Item
+        departments: [Department]
+        department(name: String!): Department
     }
 
     type Mutation {
         addUser(input: UserInput!): Auth
         login(email: String!, password: String!): Auth
-        addThought(input: ThoughtInput!): Thought
-        addComment(thoughtId: ID!, commentText: String!): Thought
-        removeThought(thoughtId: ID!): Thought
-        removeComment(thoughtId: ID!, commentId: ID!): Thought
-    }
+        addCartItem(input: CartItemInput!): CartItem
+        addItem(input: ItemInput!): Item
+        addDepartment(input: DepartmentInput!): Department
+}
 `;
 
 export default typeDefs;

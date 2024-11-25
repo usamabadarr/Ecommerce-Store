@@ -6,8 +6,8 @@ interface IItem extends Document {
     description: string;
     price: number;
     inStock: Boolean;
-    stockCount?: Number;
-    department: Schema.Types.ObjectId;
+    stockCount?: number;
+    // department: Schema.Types.ObjectId;
     featured: boolean;
 };
 
@@ -18,8 +18,8 @@ const itemSchema = new Schema<IItem>(
         description: String,
         price: Number,
         inStock: Boolean,
-        stockCount: { type: Boolean, required: false, default: 1 },
-        department: { type: Schema.Types.ObjectId, ref: 'Department' },
+        stockCount: { type: Number, required: false, default: 1 },
+        // department: { type: Schema.Types.ObjectId, ref: 'Department' },
         featured: { type: Boolean, default: false }
     },
     {

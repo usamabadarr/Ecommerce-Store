@@ -4,12 +4,6 @@ import Department from '../interfaces/Department'
 const depts: Department[] = departments;
 
 export default function departmentList() {
-    
-    
-    
-    
-    
-    
     return (
         <div>
             <h1>Departments:</h1>
