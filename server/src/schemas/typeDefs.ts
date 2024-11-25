@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import gql from "graphql-tag";
 
 const typeDefs = gql`
@@ -139,4 +138,3 @@ const typeDefs = gql`
 `;
 
 export default typeDefs;
->>>>>>> 11b32bdb95bb94fa8fb2d55c227fefe0c04a5ca1
