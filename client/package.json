@@ -4,13 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "dev": "vite --port 3000",
+    "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext js,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "eslint": "eslint src",
-    "test": "vitest"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",

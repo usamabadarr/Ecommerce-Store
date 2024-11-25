@@ -1,7 +1,7 @@
 
 import { useQuery } from '@apollo/client';
 
-import ProductList from './DepartmentSection/ProductList';
+import ProductList from './DepartmentCard';
 import IDepartment from '../../interfaces/Department';
 
 import { QUERY_DEPARTMENT_NAME } from '../../utils/queries';
@@ -19,7 +19,7 @@ const Department = () => {
                 {departmentData.map((department: IDepartment) => (
                     <>
                         <h2>{department.name}</h2>
-                        <ProductList key={department.id} DepartmentID={String(department.id)} />
+                        <ProductList DepartmentID={department.id} />
                     </>
                 ))}
             </div>
