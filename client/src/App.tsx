@@ -8,9 +8,9 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Footer from './components/Footer';
-import ProductCard from './components/ProductCard';
+// import ProductCard from './components/ProductCard';
 import './index.css'
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -44,8 +44,6 @@ function App() {
         <div className="container">
           <Outlet />
         </div>
-       
-
 
         <Footer />
       </div>

@@ -60,44 +60,44 @@ const Home = () => {
                 </Offcanvas.Body>
             </Offcanvas>
 
-             
-           
-<div className="product-grid-container">
-  <div className="product-grid">
-    <ProductCard
-      id="ricardo"
-      itemName="Electronics"
-      itemImg="https://th.bing.com/th/id/R.47f8f4b66104be2bd013aa4d7a62d3d5?rik=2QtNIhrak5YA8g&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f30000%2fvelka%2fplaying-cards.jpg&ehk=A8bc6f2hT4Js73TFBPsT1oxsB%2bSOzXMeWuVw2MZ7Kl0%3d&risl=&pid=ImgRaw&r=0"
-      department_id={402}
-      price={2000}
-      description="black couch with suede seats"
-    />
-    <ProductCard
-      id="ricardo"
-      itemName="Furniture"
-      itemImg="Black couch"
-      department_id={402}
-      price={2000}
-      description="black couch with suede seats"
-    />
-    <ProductCard
-      id="ricardo"
-      itemName="Clothing"
-      itemImg="Black couch"
-      department_id={402}
-      price={2000}
-      description="black couch with suede seats"
-    />
-    <ProductCard
-      id="ricardo"
-      itemName="Lighting"
-      itemImg="Black couch"
-      department_id={402}
-      price={2000}
-      description="black couch with suede seats"
-    />
-  </div>
-</div>
+
+
+            <div className="product-grid-container">
+                <div className="product-grid">
+                    <ProductCard
+                        id="ricardo"
+                        itemName="Electronics"
+                        itemImg="https://th.bing.com/th/id/R.47f8f4b66104be2bd013aa4d7a62d3d5?rik=2QtNIhrak5YA8g&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f30000%2fvelka%2fplaying-cards.jpg&ehk=A8bc6f2hT4Js73TFBPsT1oxsB%2bSOzXMeWuVw2MZ7Kl0%3d&risl=&pid=ImgRaw&r=0"
+                        department_id={402}
+                        price={2000}
+                        description="black couch with suede seats"
+                    />
+                    <ProductCard
+                        id="ricardo"
+                        itemName="Furniture"
+                        itemImg="Black couch"
+                        department_id={402}
+                        price={2000}
+                        description="black couch with suede seats"
+                    />
+                    <ProductCard
+                        id="ricardo"
+                        itemName="Clothing"
+                        itemImg="Black couch"
+                        department_id={402}
+                        price={2000}
+                        description="black couch with suede seats"
+                    />
+                    <ProductCard
+                        id="ricardo"
+                        itemName="Lighting"
+                        itemImg="Black couch"
+                        department_id={402}
+                        price={2000}
+                        description="black couch with suede seats"
+                    />
+                </div>
+            </div>
 
         </>
     );
