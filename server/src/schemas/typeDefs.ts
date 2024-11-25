@@ -32,7 +32,6 @@ const typeDefs = gql`
         price: Float
         inStock: Boolean
         stockCount: Float
-        department: [Department]
         featured: Boolean
     }
 
@@ -84,6 +83,7 @@ const typeDefs = gql`
         cartItems: [CartItem]
         items: [Item]
         item(name: String!): Item
+        featuredItem: [Item]
         departments: [Department]
         department(name: String!): Department
     }

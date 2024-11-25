@@ -7,7 +7,13 @@ import { useState, SyntheticEvent } from "react";
 import "./ProductCard.css";
 import auth from '../../../utils/auth';
 
-const ProductList = (DepartmentID: string) => {
+interface ProductListProps {
+
+    departmentId: string;
+
+}
+
+const ProductList = ({ departmentId }: ProductListProps) => {
     const userID = auth.getProfile().data._id;
     const [itemId, setItemId] = useState<string>("");
     const [cartId, setCartId] = useState<string>("");
@@ -15,15 +21,16 @@ const ProductList = (DepartmentID: string) => {
     setCartId(userID);
 
     const { loading, data } = useQuery(QUERY_DEPARTMENT, {
-        variables: { DepartmentID: DepartmentID },
+        variables: { DepartmentID: departmentId },
     });
 
-    const itemsData = data?.itemsData || [];
+    const [addItem] = useMutation(ADD_CARTITEM);
+
     if (loading) {
         return <div>Loading...</div>;
     }
 
-    const [addItem, { error }] = useMutation(ADD_CARTITEM);
+    const itemsData = data?.itemsData || [];
 
     const handleAddToCart = async (event: SyntheticEvent) => {
         event.preventDefault();
@@ -34,10 +41,9 @@ const ProductList = (DepartmentID: string) => {
                     cartId, itemId
                 }
             });
-            alert("Item added to cart!");
-        } catch (e) {
-            console.error(e);
-            alert("Failed to add item to cart.");
+            console.log("Item added to cart successfully");
+        } catch (err) {
+            console.error(err);
         }
     };
 

@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_SINGLE_PROFILE = gql`
   query singleProfile($profileId: ID!) {
@@ -31,13 +31,12 @@ export const QUERY_SINGLE_CART = gql`
 `;
 export const QUERY_FEATURED_ITEMS = gql`
   query featuredItems {
-    featuredItems {
+    items(filter: { featured: true }) {
       _id
       name
+      image
       description
       price
-      quantity
-      department
     }
   }
 `;
