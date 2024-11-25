@@ -83,6 +83,7 @@ const typeDefs = gql`
         cartItems: [CartItem]
         items: [Item]
         item(name: String!): Item
+        featuredItem: [Item]
         departments: [Department]
         department(name: String!): Department
     }

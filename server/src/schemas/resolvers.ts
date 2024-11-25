@@ -89,6 +89,9 @@ const resolvers = {
         item: async (_parent: any, { name }: ItemArgs) => {
             return Item.findOne({ name })
         },
+        featuredItem: async () => {
+            return Item.find({ featured: true });
+        },
         cart: async (_parent: any, context: UserContext) => {
             return await Cart.findOne({ user: context.user._id}).populate('addedItems');
         },
