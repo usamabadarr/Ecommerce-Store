@@ -9,7 +9,7 @@ import { QUERY_FEATURED_ITEMS } from '../utils/queries';
 import FeaturedItem from '../components/FeaturedItem';
 import Department from '../components/Department';
 import ShoppingCart from '../components/ShoppingCart';
-import ProductCard from '../components/ProductCard';
+// import ProductCard from '../components/ProductCard';
 
 import Item from '../interfaces/Item';
 
@@ -62,7 +62,7 @@ const Home = () => {
 
 
 
-            <div className="product-grid-container">
+            {/* <div className="product-grid-container">
                 <div className="product-grid">
                     <ProductCard
                         id="ricardo"
@@ -97,8 +97,7 @@ const Home = () => {
                         description="black couch with suede seats"
                     />
                 </div>
-            </div>
-
+            </div> */}
         </>
     );
 }
