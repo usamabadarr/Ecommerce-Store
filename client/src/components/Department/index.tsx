@@ -19,7 +19,7 @@ const Department = () => {
                 {departmentData.map((department: IDepartment) => (
                     <>
                         <h2>{department.name}</h2>
-                        <ProductList DepartmentID={department.id} />
+                        <ProductList departmentId={department.id} />
                     </>
                 ))}
             </div>
