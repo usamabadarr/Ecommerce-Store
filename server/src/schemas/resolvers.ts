@@ -78,7 +78,7 @@ const resolvers = {
             return User.findOne({ username }).populate('cart')
         },
         departments: async () => {
-            return Department.find().populate('items');
+            return await Department.find().populate('items');
         },
         department: async (_parent: any, { name }: DepartmentArgs) => {
             return Department.findOne({ name }).populate('items');
