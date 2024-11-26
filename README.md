@@ -12,6 +12,8 @@ Installation
 
 Running the Application
 
+Live
+
 Contributing
 
 License
@@ -82,6 +84,9 @@ Open your browser and navigate to:
 The backend GraphQL server runs on:
 
 ```http://localhost:3001/graphql```
+
+## Live
+Application is deployed on Render. Here is a deployed link: https://ecommerce-store-w47e.onrender.com
 
 ## Contributing
 We welcome contributions! To contribute:
