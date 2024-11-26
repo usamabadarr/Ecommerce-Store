@@ -1,9 +1,9 @@
 import db from '../config/connection.js';
 import { Department, User, Item } from '../models/index.js';
 // import cartSeeds from './cartData.json' assert { type: "json" };
-import userSeeds from './userData.json' assert { type: "json" };
-import departmentSeeds from './departmentData.json' assert { type: "json" };
-import itemSeeds from './itemData.json' assert { type: "json" };
+import userSeeds from './userData.json' with { type: "json" };
+import departmentSeeds from './departmentData.json' with { type: "json" };
+import itemSeeds from './itemData.json' with { type: "json" };
 // import cartItemSeeds from './cartItemData.json' assert { type: "json" };
 
 import cleanDB from './cleanDB.js';
