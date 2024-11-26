@@ -1,5 +1,5 @@
 import CartItem from "../../../interfaces/CartItem";
-import React, { useState } from "react";
+import { useState } from "react";
 import auth from "../../../utils/auth";
 import { useMutation } from "@apollo/client";
 import { gql } from "graphql-tag";
